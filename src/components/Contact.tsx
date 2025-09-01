@@ -9,8 +9,13 @@ const Contact = () => {
     email: '',
     message: ''
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<{
+    name?: string;
+    email?: string;
+    message?: string;
+  }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  // const [isSubmitted, setIsSubmitted] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -49,7 +54,7 @@ const Contact = () => {
     }));
     
     // Clear error when user starts typing
-    if (errors[name]) {
+    if (errors[name as keyof typeof errors]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
@@ -58,7 +63,11 @@ const Contact = () => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: {
+      name?: string;
+      email?: string;
+      message?: string;
+    } = {};
     
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
@@ -333,7 +342,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="5"
+                    rows={5}
                     className={`w-full p-3 bg-white/5 border rounded-lg focus:ring-2 focus:outline-none ${errors.message ? 'border-red-400 focus:ring-red-400/30' : 'border-white/10 focus:ring-teal-400/30'} text-blue-100`}
                     placeholder="Your message"
                   ></textarea>
