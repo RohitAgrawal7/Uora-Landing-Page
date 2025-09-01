@@ -107,7 +107,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <motion.button
+            <motion.a
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.5)"
@@ -119,9 +122,10 @@ const Hero = () => {
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
-            </motion.button>
+            </motion.a>
             
-            <motion.button
+            <motion.a
+              href="#contactus"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.2)"
@@ -130,7 +134,7 @@ const Hero = () => {
               className="border border-teal-500 text-teal-100 font-medium py-3 px-8 rounded-full hover:bg-teal-900/30 transition-all"
             >
               Contact Us
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
 

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import Navigation from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';

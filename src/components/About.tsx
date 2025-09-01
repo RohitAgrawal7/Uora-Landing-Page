@@ -36,7 +36,7 @@ const About = () => {
     offset: ['start end', 'end start'],
   });
   
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  // const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.95]);
 
