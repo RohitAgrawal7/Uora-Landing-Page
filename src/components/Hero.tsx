@@ -10,7 +10,7 @@ const Hero = () => {
     // Background animation effect
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
-      const parallax = document.querySelector('.parallax-bg');
+      const parallax = document.querySelector('.parallax-bg')as HTMLElement;
       if (parallax) {
         parallax.style.transform = `translateY(${scrolled * 0.4}px)`;
       }
