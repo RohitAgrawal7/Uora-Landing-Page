@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900">
       {/* Animated background elements */}
       <div className="parallax-bg absolute inset-0 opacity-20">
         {[...Array(25)].map((_, i) => (
@@ -108,7 +108,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="https://www.google.com"
+              href="https://rohitagrawal7.github.io/journal-website/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ 
