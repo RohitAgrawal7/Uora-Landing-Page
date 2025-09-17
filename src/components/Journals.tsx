@@ -1,4 +1,4 @@
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 
 const journals = [
@@ -102,7 +102,7 @@ const Journals = () => {
     <motion.section
       id="journals"
       ref={ref}
-      className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]"
+      className="relative py-20 px-6 overflow-hidden bg-gradient-to-bl from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]"
     >
       {/* Animated background elements */}
       <motion.div
