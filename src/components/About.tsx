@@ -6,37 +6,37 @@ const highlights = [
     title: 'Multidisciplinary Publishing',
     description: 'Publishes high-quality peer-reviewed journals, books, e-books, and study materials across Science, Technology, Management, Arts, and Medical Sciences.',
     icon: '📚',
-    gradient: 'from-blue-600 to-teal-600'
+    gradient: 'from-[#2B6CB0] to-[#68D391]'
   },
   {
     title: 'Consultancy Services',
     description: 'Provides expert guidance for academic research, project documentation, and comprehensive report preparation for global organizations.',
     icon: '💼',
-    gradient: 'from-teal-600 to-blue-600'
+    gradient: 'from-[#38A169] to-[#68D391]'
   },
   {
     title: 'Ethical Standards',
     description: 'Ensures rigorous peer review and ethical publishing practices, fostering credible and impactful scholarly work.',
     icon: '⚖️',
-    gradient: 'from-purple-600 to-pink-600'
+    gradient: 'from-[#2B6CB0] to-[#38A169]'
   },
   {
     title: 'Global Impact',
     description: 'Serves the worldwide academic and research community through innovation, sustainability, and knowledge sharing.',
     icon: '🌍',
-    gradient: 'from-green-600 to-teal-600'
+    gradient: 'from-[#68D391] to-[#2B6CB0]'
   },
 ];
 
 const About = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
   
-  // const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.95]);
 
@@ -61,72 +61,60 @@ const About = () => {
     };
   }, []);
 
+  // Research-themed SVG icons for background
+  const researchIcons = [
+    <svg key="book" className="w-8 h-8 text-[#68D391]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+    </svg>,
+    <svg key="molecule" className="w-8 h-8 text-[#2B6CB0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m3.375 0V9.75M9 5.25H5.625m0 0H2.25m3.375 0v3.375m0 0v3.375M2.25 5.25v3.375m0 0h3.375M5.625 8.625h3.375M9 8.625v3.375m0 0H5.625m3.375 0V16.875" />
+    </svg>,
+    <svg key="graph" className="w-8 h-8 text-[#38A169]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>,
+  ];
+
   return (
-    <section id="about" ref={ref} className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-teal-900">
-      {/* Enhanced background with layered gradients */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-slate-900/70 to-slate-900"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/10 to-blue-900/10"></div>
-      </div>
-
-      {/* Animated grid pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      </div>
-
-      {/* Floating particles with enhanced animation */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full"
+    <section id="about" ref={ref} className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]">
+      {/* Animated background elements */}
+      <motion.div
+        className="absolute inset-0 opacity-15"
+        style={{ y: backgroundY }}
+      >
+        <div
+          className="absolute inset-0"
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            width: `${Math.random() * 12 + 3}px`,
-            height: `${Math.random() * 12 + 3}px`,
-            background: i % 4 === 0 ? '#3b82f6' : i % 4 === 1 ? '#10b981' : i % 4 === 2 ? '#8b5cf6' : '#f97316',
-          }}
-          animate={{
-            y: [0, -40, 0],
-            x: [0, i % 2 === 0 ? 20 : -20, 0],
-            opacity: [0, 0.8, 0],
-            scale: [0, 1, 0],
-          }}
-          transition={{
-            duration: Math.random() * 15 + 15,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "easeInOut"
+            background: 'radial-gradient(circle at 50% 50%, #C6F6D5 10%, transparent 50%)',
           }}
         />
-      ))}
+        {[...Array(10)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              transform: 'translate(-50%, -50%)',
+            }}
+            animate={{
+              y: [0, -20, 0],
+              x: [0, i % 2 === 0 ? 15 : -15, 0],
+              opacity: [0, 0.4, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          >
+            {researchIcons[i % researchIcons.length]}
+          </motion.div>
+        ))}
+      </motion.div>
 
-      {/* Animated gradient orbs */}
-      <motion.div 
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-blue-600/20 to-teal-600/20 blur-3xl"
-      />
-      <motion.div 
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.4, 0.2, 0.4],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-teal-600/20 to-blue-600/20 blur-3xl"
-      />
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F5F7FA]/20 to-[#C6F6D5]/30"></div>
 
       {/* Content */}
       <motion.div 
@@ -135,7 +123,7 @@ const About = () => {
       >
         <div className="text-center mb-16">
           <motion.span 
-            className="text-xs font-semibold tracking-wider text-teal-300 uppercase inline-block py-2 px-4 rounded-full bg-teal-900/30 mb-6 border border-teal-500/20"
+            className="text-xs font-semibold tracking-wider text-[#38A169] uppercase inline-block py-2 px-4 rounded-full bg-[#C6F6D5]/50 mb-6 border border-[#C6F6D5]/20"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
@@ -147,7 +135,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-blue-200"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1A202C] font-serif"
           >
             About UORA
           </motion.h2>
@@ -156,7 +144,7 @@ const About = () => {
             initial={{ width: 0 }}
             animate={isVisible ? { width: 120 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-500 mx-auto rounded-full mb-10"
+            className="h-1 bg-gradient-to-r from-[#2B6CB0] to-[#68D391] mx-auto rounded-full mb-10"
           />
         </div>
 
@@ -164,16 +152,21 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg max-w-4xl mx-auto text-blue-100 mb-16 text-center leading-relaxed font-light relative"
+          className="text-lg max-w-4xl mx-auto text-[#4A5568] mb-16 text-center leading-relaxed font-light relative"
+          whileHover={{ 
+            scale: 1.02, 
+            boxShadow: '0 8px 20px rgba(43, 108, 176, 0.1)',
+            transition: { duration: 0.2 }
+          }}
         >
-          <span className="absolute -left-10 top-0 text-6xl opacity-20 text-teal-300 font-serif">"</span>
+          <span className="absolute -left-10 top-0 text-6xl opacity-20 text-[#38A169] font-serif">"</span>
           <p className="relative z-10">
             Established in May 2025, Universal Oneness in Research Association (UORA) is a multidisciplinary organization
             committed to advancing knowledge across Science, Technology, Management, Arts, Medical Sciences, and allied
             fields. UORA publishes high-quality peer-reviewed journals, print books, e-books, international journals,
             question banks, and study materials, serving the global academic and research community.
           </p>
-          <span className="absolute -right-10 bottom-0 text-6xl opacity-20 text-teal-300 font-serif">"</span>
+          <span className="absolute -right-10 bottom-0 text-6xl opacity-20 text-[#38A169] font-serif">"</span>
         </motion.div>
 
         {/* Highlights Grid */}
@@ -189,10 +182,9 @@ const About = () => {
                 scale: 1.03, 
                 transition: { duration: 0.2 } 
               }}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-teal-400/30 transition-all relative overflow-hidden group"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-[#E2E8F0] hover:border-[#68D391]/30 transition-all relative overflow-hidden group"
             >
-              {/* Gradient background on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-r ${highlight.gradient}`} />
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-r ${highlight.gradient}`} />
               
               <div className="flex items-start mb-6">
                 <motion.span 
@@ -202,40 +194,62 @@ const About = () => {
                 >
                   {highlight.icon}
                 </motion.span>
-                <h3 className="text-xl font-semibold text-teal-200">{highlight.title}</h3>
+                <h3 className="text-xl font-semibold text-[#1A202C] font-serif">{highlight.title}</h3>
               </div>
-              <p className="text-blue-100 leading-relaxed">{highlight.description}</p>
+              <p className="text-[#4A5568] leading-relaxed">{highlight.description}</p>
               
-              {/* Animated underline */}
               <motion.div 
-                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-teal-500"
+                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#2B6CB0] to-[#68D391]"
                 initial={{ width: 0 }}
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
               
-              {/* Shine effect on hover */}
-              <div className="absolute inset-0 -inset-x-32 -inset-y-10 bg-gradient-to-r from-transparent via-white/5 to-transparent transform rotate-12 scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 -inset-x-32 -inset-y-10 bg-gradient-to-r from-transparent via-[#C6F6D5]/10 to-transparent transform rotate-12 scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
           ))}
         </div>
+
+        {/* Quick Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto"
+        >
+          {[
+            { value: '2025', label: 'Founded' },
+            { value: '100+', label: 'Publications' },
+            { value: '25+', label: 'Disciplines' },
+            { value: 'Global', label: 'Reach' },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -5, backgroundColor: '#C6F6D5' }}
+              className="bg-white p-4 rounded-lg shadow-sm border border-[#E2E8F0]"
+            >
+              <div className="text-2xl md:text-3xl font-bold text-[#2B6CB0]">{stat.value}</div>
+              <div className="text-sm text-[#4A5568] mt-1">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-20 text-center"
         >
           <motion.a
             href="#"
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 10px 30px -5px rgba(16, 185, 129, 0.5)",
+              boxShadow: "0 10px 30px -5px rgba(43, 108, 176, 0.3)",
               y: -3
             }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium py-4 px-10 rounded-full hover:shadow-lg transition-all"
+            className="inline-flex items-center bg-gradient-to-r from-[#2B6CB0] to-[#68D391] text-white font-medium py-4 px-10 rounded-full hover:shadow-lg transition-all"
             aria-label="Learn more about UORA"
           >
             Discover More

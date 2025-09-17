@@ -1,15 +1,18 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: '#1E88E5', // Deep blue for academic feel
-        secondary: '#F5F5DC', // Green for sustainability/innovation
-        accent: '#F3F4F6', // Light gray for backgrounds
+        primary: "#004085", // Deep blue for headers
+        secondary: "#6c757d", // Gray for text
+        accent: "#f8f9fa", // Light background
+        highlight: "#007bff", // Blue for accents and buttons
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Modern sans-serif (add via Google Fonts later)
+        serif: ["Georgia", "serif"], // For headings
+        sans: ["Arial", "sans-serif"], // For body text
       },
     },
   },

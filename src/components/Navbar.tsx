@@ -80,7 +80,7 @@ const Navigation = () => {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed w-full z-50 py-3 px-4 sm:px-6 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-teal-500/20'
+          ? 'bg-[#F5F7FA]/95 backdrop-blur-md shadow-lg border-b border-[#C6F6D5]/20'
           : 'bg-transparent'
       }`}
     >
@@ -89,7 +89,7 @@ const Navigation = () => {
           href="#home"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-blue-300"
+          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#2B6CB0] to-[#68D391]"
           onClick={() => handleNavClick('#home', 'home')}
         >
           UORA
@@ -102,7 +102,7 @@ const Navigation = () => {
               <motion.a
                 href={item.href}
                 className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeSection === item.id ? 'text-white' : 'text-blue-100 hover:text-white'
+                  activeSection === item.id ? 'text-[#1A202C]' : 'text-[#4A5568] hover:text-[#1A202C]'
                 }`}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
@@ -112,13 +112,13 @@ const Navigation = () => {
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute inset-0 bg-gradient-to-r from-teal-600/30 to-blue-600/30 rounded-full border border-teal-400/30"
+                    className="absolute inset-0 bg-gradient-to-r from-[#2B6CB0]/30 to-[#68D391]/30 rounded-full border border-[#C6F6D5]/30"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-teal-600/10 to-blue-600/10 rounded-full opacity-0 hover:opacity-100 transition-opacity"
+                  className="absolute inset-0 bg-gradient-to-r from-[#2B6CB0]/10 to-[#68D391]/10 rounded-full opacity-0 hover:opacity-100 transition-opacity"
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 />
@@ -130,7 +130,7 @@ const Navigation = () => {
         {/* Mobile Menu Button */}
         <motion.button
           whileTap={{ scale: 0.95 }}
-          className="md:hidden p-2 rounded-lg bg-slate-800/50 text-teal-300"
+          className="md:hidden p-2 rounded-lg bg-[#E2E8F0]/50 text-[#68D391]"
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
           aria-expanded={mobileMenuOpen}
@@ -169,7 +169,7 @@ const Navigation = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden mt-4 bg-slate-800/95 backdrop-blur-md rounded-xl p-4 border border-teal-500/20 z-50"
+            className="md:hidden mt-4 bg-[#F5F7FA]/95 backdrop-blur-md rounded-xl p-4 border border-[#C6F6D5]/20 z-50"
           >
             <ul className="space-y-2">
               {navItems.map((item, index) => (
@@ -183,8 +183,8 @@ const Navigation = () => {
                     href={item.href}
                     className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                       activeSection === item.id
-                        ? 'bg-gradient-to-r from-teal-600/30 to-blue-600/30 text-white'
-                        : 'text-blue-100 hover:text-white hover:bg-slate-700/50'
+                        ? 'bg-gradient-to-r from-[#2B6CB0]/30 to-[#68D391]/30 text-[#1A202C]'
+                        : 'text-[#4A5568] hover:text-[#1A202C] hover:bg-[#E2E8F0]/50'
                     }`}
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
@@ -196,7 +196,7 @@ const Navigation = () => {
                     {item.name}
                     {activeSection === item.id && (
                       <motion.span
-                        className="ml-2 w-2 h-2 bg-teal-400 rounded-full inline-block"
+                        className="ml-2 w-2 h-2 bg-[#68D391] rounded-full inline-block"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ type: 'spring', stiffness: 500, damping: 20 }}
