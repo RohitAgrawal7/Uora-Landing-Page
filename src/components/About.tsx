@@ -4,27 +4,91 @@ import { useRef, useEffect, useState } from 'react';
 const highlights = [
   {
     title: 'Multidisciplinary Publishing',
-    description: 'Publishes high-quality peer-reviewed journals, books, e-books, and study materials across Science, Technology, Management, Arts, and Medical Sciences.',
-    icon: '📚',
-    gradient: 'from-[#2B6CB0] to-[#68D391]'
+    description:
+      'Publishes high-quality peer-reviewed journals, books, e-books, and study materials across Science, Technology, Management, Arts, and Medical Sciences.',
+    icon: (
+      <svg
+        className="w-8 h-8 text-[#4A3728]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+        />
+      </svg>
+    ),
+    gradient: 'from-[#2B6CB0] to-[#68D391]',
   },
   {
     title: 'Consultancy Services',
-    description: 'Provides expert guidance for academic research, project documentation, and comprehensive report preparation for global organizations.',
-    icon: '💼',
-    gradient: 'from-[#38A169] to-[#68D391]'
+    description:
+      'Provides expert guidance for academic research, project documentation, and comprehensive report preparation for global organizations.',
+    icon: (
+      <svg
+        className="w-8 h-8 text-[#4A3728]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+    gradient: 'from-[#38A169] to-[#68D391]',
   },
   {
     title: 'Ethical Standards',
-    description: 'Ensures rigorous peer review and ethical publishing practices, fostering credible and impactful scholarly work.',
-    icon: '⚖️',
-    gradient: 'from-[#2B6CB0] to-[#38A169]'
+    description:
+      'Ensures rigorous peer review and ethical publishing practices, fostering credible and impactful scholarly work.',
+    icon: (
+      <svg
+        className="w-8 h-8 text-[#4A3728]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+    gradient: 'from-[#2B6CB0] to-[#38A169]',
   },
   {
     title: 'Global Impact',
-    description: 'Serves the worldwide academic and research community through innovation, sustainability, and knowledge sharing.',
-    icon: '🌍',
-    gradient: 'from-[#68D391] to-[#2B6CB0]'
+    description:
+      'Serves the worldwide academic and research community through innovation, sustainability, and knowledge sharing.',
+    icon: (
+      <svg
+        className="w-8 h-8 text-[#4A3728]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012-2v-1a2 2 0 012-2h2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+    gradient: 'from-[#68D391] to-[#2B6CB0]',
   },
 ];
 
@@ -75,7 +139,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={ref} className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]">
+    <section id="about" ref={ref} className="relative py-24 px-6 overflow-hidden bg-gradient-to-bl from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]">
       {/* Animated background elements */}
       <motion.div
         className="absolute inset-0 opacity-15"
@@ -194,7 +258,7 @@ const About = () => {
                 >
                   {highlight.icon}
                 </motion.span>
-                <h3 className="text-xl font-semibold text-[#1A202C] font-serif">{highlight.title}</h3>
+                <h3 className="text-xl font-semibold text-[#2B6CB0] font-serif">{highlight.title}</h3>
               </div>
               <p className="text-[#4A5568] leading-relaxed">{highlight.description}</p>
               

@@ -87,7 +87,7 @@ const Editorial = () => {
     <motion.section
       id="editorial"
       ref={ref}
-      className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]"
+      className="relative py-20 px-6 overflow-hidden bg-gradient-to-bl from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]"
     >
       {/* Animated background elements */}
       <motion.div
@@ -222,7 +222,7 @@ const Editorial = () => {
                   {member.icon}
                 </motion.div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#1A202C] font-serif">{member.role}</h3>
+                  <h3 className="text-xl font-semibold text-[#2B6CB0] font-serif">{member.role}</h3>
                   <p className="text-[#4A5568] font-medium">{member.name}</p>
                 </div>
               </div>
@@ -255,21 +255,27 @@ const Editorial = () => {
                   </motion.a>
                 </div>
 
-                <div className="flex space-x-4 pt-4">
-                  {Object.entries(member.social).map(([platform, href]) => (
-                    <motion.a
-                      key={platform}
-                      href={href}
-                      whileHover={{ y: -5, scale: 1.1 }}
-                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#E2E8F0] hover:border-[#2A7B3F] transition-all"
-                      aria-label={`Follow ${member.name} on ${platform}`}
-                    >
-                      <span className="text-[#4A3728]">
-                        {platform === 'linkedin' ? '💼' : '🐦'}
-                      </span>
-                    </motion.a>
-                  ))}
-                </div>
+               <div className="flex space-x-4 pt-4">
+  {Object.entries(member.social).map(([platform, href]) => (
+    <motion.a
+      key={platform}
+      href={href}
+      whileHover={{ y: -5, scale: 1.1 }}
+      className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#E2E8F0] hover:border-[#2A7B3F] transition-all"
+      aria-label={`Follow ${member.name} on ${platform}`}
+    >
+      {platform.toLowerCase() === 'linkedin' ? (
+        <svg className="w-5 h-5 text-[#4A3728]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ) : (
+        <svg className="w-5 h-5 text-[#4A3728]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+        </svg>
+      )}
+    </motion.a>
+  ))}
+</div>
               </div>
               
               <motion.div 

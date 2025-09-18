@@ -101,7 +101,7 @@ const Mission = () => {
     <motion.section
       id="mission"
       ref={ref}
-      className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]"
+      className="relative py-20 px-6 overflow-hidden bg-gradient-to-bl from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA]"
     >
       {/* Animated background elements */}
       <motion.div

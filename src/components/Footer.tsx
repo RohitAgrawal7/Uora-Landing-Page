@@ -83,7 +83,7 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative py-12 px-6 overflow-hidden bg-gradient-to-br from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA] border-t border-[#C6F6D5]/20"
+      className="relative py-12 px-6 overflow-hidden bg-gradient-to-bl from-[#F5F7FA] via-[#C6F6D5] to-[#F5F7FA] border-t border-[#C6F6D5]/20"
     >
       {/* Animated background elements */}
       <motion.div
@@ -241,7 +241,7 @@ const Footer = () => {
                 whileHover={{ color: '#68D391' }}
                 className="text-[#2A7B3F] block transition-colors"
               >
-                contact@uora.org
+                contact@uorapublications.com
               </motion.a>
             </div>
           </motion.div>
