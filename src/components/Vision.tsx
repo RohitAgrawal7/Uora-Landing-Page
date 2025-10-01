@@ -303,7 +303,7 @@ const Vision = () => {
           className="mt-12 text-center"
         >
           <motion.a
-            href="#mission"
+            href="https://ujgsm.uorapublications.com"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 10px 25px -5px rgba(43, 108, 176, 0.3)"

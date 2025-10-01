@@ -306,7 +306,7 @@ const About = () => {
           className="mt-20 text-center"
         >
           <motion.a
-            href="#"
+            href="https://ujgsm.uorapublications.com"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 10px 30px -5px rgba(43, 108, 176, 0.3)",

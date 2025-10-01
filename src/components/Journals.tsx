@@ -27,7 +27,7 @@ const journals = [
       </svg>
     ),
     color: "from-[#38A169] to-[#68D391]",
-    href: "https://rohitagrawal7.github.io/journal-website/gtis",
+    href: "https://ujgsm.uorapublications.com",
     target: "_blank",
   },
   {
@@ -41,7 +41,7 @@ const journals = [
       </svg>
     ),
     color: "from-[#68D391] to-[#2B6CB0]",
-    href: "https://rohitagrawal7.github.io/journal-website/jams",
+    href: "https://ujgsm.uorapublications.com",
     target: "_blank",
   },
   {
@@ -55,7 +55,7 @@ const journals = [
       </svg>
     ),
     color: "from-[#2B6CB0] to-[#38A169]",
-    href: "https://rohitagrawal7.github.io/journal-website/acsr",
+    href: "https://ujgsm.uorapublications.com",
     target: "_blank",
   },
 ];

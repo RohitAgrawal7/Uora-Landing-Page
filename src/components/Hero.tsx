@@ -129,7 +129,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="https://rohitagrawal7.github.io/journal-website/"
+              href="https://ujgsm.uorapublications.com"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{
@@ -157,7 +157,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="#contactus"
+              href="#contact"
               whileHover={{
                 scale: 1.05,
                 boxShadow: '0 10px 25px -5px rgba(104, 211, 145, 0.3)',

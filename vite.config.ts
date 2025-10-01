@@ -4,5 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/Uora-Landing-Page/",
+  // base: "/Uora-Landing-Page/",
+  base: "/",
 });
